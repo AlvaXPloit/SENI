@@ -1,0 +1,1 @@
+hello kids ini bapakmu
