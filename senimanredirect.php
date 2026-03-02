@@ -309,7 +309,7 @@ beginneon();
 </br>
 </br><b><font color=white size=3 face="courier New"> "Selamat Berbahagia Dengan Pasanganmu:)" </font> </b> </br>
 </br><b><font color=red size=2 face="courier New"> Thanks to: </font> </b> </br> 
-<b><font color=white size=1 face="courier New"> - Royal Fool - JasterFool - GodFather77 - L4NA - YamiFool </font></b>
+<b><font color=white size=1 face="courier New"> - Royal Fool - JasterFool - GodFather77 - L4NA - YamiFool - t.me/senidarikesedihan </font></b>
 </br> </br>
 <i><font color=grey size=1 face="courier New"> Copyright@since2018 </font> </i>
 ';
