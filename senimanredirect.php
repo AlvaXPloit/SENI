@@ -87,8 +87,8 @@ class SimpleReplacer {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <meta name="viewport" content="width=device-width, initial-scale=1" /> 
 <head>
-    <title>Touched By YamiFool - Royal Fool</title>
-<meta property="og:description" content="Touched By YamiFool - Royal Fool!!"/>	
+    <title>Touched By YamiFool - Royal Fool - DASAR LONTE JALANG</title>
+<meta property="og:description" content="Touched By YamiFool - DASAR LONTE JALANG!!"/>	
 <meta property="og:image" content="https://i.ibb.co.com/sd4ZB5Xp/image.png"/>
 <link rel="shortcut icon" href="https://i.ibb.co.com/sd4ZB5Xp/image.png"/>
 <link href="https://fonts.googleapis.com/css?family=&display=swap" type="text/css" rel="stylesheet">
@@ -214,13 +214,13 @@ function liat(){document.getElementById(\'galiat\').style.visibility=\'visible\'
 <center>
     <center>
 	  </br> </br> </br>
-<script>alert("Aku Tak Bisa Melupakanku !!");</script>
-<script>alert("Im loser !!");</script>
-<script>alert("Yami Pecundang:)");</script>
+<script>alert("DASAR LONTE BAJINGAN!!");</script>
+<script>alert("SPAM PENGHINA AGAMA ISLAM ANAK LOLIX !!");</script>
+<script>alert("DASAR LONTE LOLIX BAJINGAN ANAK ANJING");</script>
 <center>
 		  </br> </br> </br> </br> </br> </br>
 		  <center>
-			  <img src="https://i.ibb.co.com/yF1SS04p/download.gif"/>
+			  <img src="123.jpg"/>
 		  </center>
           <br><br><br>
 <i>
@@ -270,7 +270,8 @@ beginneon();
 </h2>
 </body>
 </br>
-</br><b><font color=white size=3 face="courier New"> "Selamat Berbahagia Dengan Pasanganmu:)" </font> </b> </br>
+</br><b><font color=white size=3 face="courier New"> "LONTE ASAL BALI NAMA: DEWI SYAFITRI ,NAMA BAPAK YASIN NO: +62 831-1828-063 NO BAPAKNYA: +62 831-1828-063
+PENCABULAN DAN PENGEROYOKAN MALING UANG TOTAL 150 JUTA BEKERJA DENGAN JUDI ONLINE DAN MENGHINA MENGHINA AGAMA ISLAM,HATI2 ERHADAP TUKANG MANIPULASI INI" </font> </b> </br>
 </br><b><font color=red size=2 face="courier New"> Thanks to: </font> </b> </br> 
 <b><font color=white size=1 face="courier New"> - Royal Fool - JasterFool - GodFather77 - L4NA - YamiFool - t.me/senidarikesedihan </font></b>
 </br> </br>
