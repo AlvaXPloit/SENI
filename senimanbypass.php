@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pass = "SenimanGodOfServer";
+$pass = "IDONTKNOW";
 
 // Login check
 if (!isset($_SESSION["login"])) {
